@@ -28,7 +28,13 @@ def position_taken?(board, index)
 end
 
 def valid_move?(board, index)
+<<<<<<< HEAD
   index.between?(0,8) && board[index] != "X" && board[index] != "O"
+=======
+  if index.between?(0,8) && board[index] != "X" && board[index] != "O"
+    return TRUE
+  end
+>>>>>>> a918b427d54b3dcf3b6014bf934836fb183afba4
 end
 
 def move(board, index, player)
@@ -41,8 +47,12 @@ def turn(board)
   index = input_to_index(input)
   
   if valid_move?(board,index)
+<<<<<<< HEAD
     player = current_player(board)
     move(board,index, player)
+=======
+    move(board,index, player = "X")
+>>>>>>> a918b427d54b3dcf3b6014bf934836fb183afba4
     display_board(board)
   else 
     turn(board)
@@ -59,6 +69,10 @@ def turn_count(board)
 return counter
 end
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a918b427d54b3dcf3b6014bf934836fb183afba4
 def current_player(board)
   if turn_count(board) % 2 == 0
     board = "X"
@@ -85,7 +99,11 @@ def won?(board)
       false
     end
   end
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> a918b427d54b3dcf3b6014bf934836fb183afba4
   if board.all?{|i| i == " "}
     return false
   else
@@ -104,11 +122,23 @@ def full?(board)
 end
 
 def draw?(board)
+<<<<<<< HEAD
   won?(board) == false && full?(board)
 end
 
 def over?(board)
   if won?(board) || draw?(board)
+=======
+  if won?(board) == false && full?(board) == true
+    return true
+  else
+    return false
+  end
+end
+
+def over?(board)
+  if won?(board) || draw?(board) || full?(board)
+>>>>>>> a918b427d54b3dcf3b6014bf934836fb183afba4
     return true 
   end
 end
@@ -132,5 +162,10 @@ def play(board)
   else draw?(board)
      puts "Cat's Game!"
   end
+<<<<<<< HEAD
 end
 
+=======
+
+end
+>>>>>>> a918b427d54b3dcf3b6014bf934836fb183afba4
